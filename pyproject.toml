@@ -1,0 +1,20 @@
+[project]
+name = "crb-pi-biblio"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "citeproc-py>=0.8.2",
+    "icecream>=2.1.5",
+    "ipykernel>=6.29.5",
+    "pandas>=2.3.1",
+    "pybtex>=0.25.1",
+    "pyzotero>=1.6.11",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+]

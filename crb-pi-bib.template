@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pi-biblio</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="crb-pi-bib.css" />
+</head>
+<body class="section">
+
+    <p class="fixed-top-center">{{header}}</p>
+
+    <div class="container">
+
+        {% for i, r in df.iterrows() %}
+            <!-- put the id here to prevent it from being covered by the fixed header -->
+            <p id="{{ r['Key'] }}"></p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>[{{ i+1 }}] ID: {{ r['Key'] }}</p>
+            <p class="reference">{{ r['ref'] }}</p>
+
+            
+            {% if r['abstract_exists'] %}
+            <p><b>Abstract</b></p>
+            <div class="abstract">
+                {{ r['Abstract Note'] }}
+            </div> 
+            {% endif %}
+            
+            {% if r['notes_exist'] %}
+            <p><b>Notes</b></p>
+            <div class="notes">
+                {{ r['Notes'] }}
+            </div> 
+            {% endif %}
+
+            {% if r['attachments_exist'] %}
+            <p><b>Attachments</b></p>
+            <p>{{ r['attachments'] }}</p>
+            {% endif %} 
+
+            <br>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
