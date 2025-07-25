@@ -10,12 +10,11 @@
 </head>
 <body class="section">
 
-    <p class="fixed-top-center">{{header}}</p>
+    <p class="fixed-top-center">{{ header }}</p>
 
     <div class="container">
 
         {% for i, r in df.iterrows() %}
-            <!-- put the id here to prevent it from being covered by the fixed header -->
             <p id="{{ r['Key'] }}"></p>
             <br>
             <br>
