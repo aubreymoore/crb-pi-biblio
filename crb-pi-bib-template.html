@@ -14,6 +14,12 @@
 
     <div class="container">
 
+        {{ preamble_html }}
+
+        <br>
+        <p><b>Bibliography</b></p>
+        <br>
+
         {% for i, r in df.iterrows() %}
             <p id="{{ r['Key'] }}"></p>
             <br>
