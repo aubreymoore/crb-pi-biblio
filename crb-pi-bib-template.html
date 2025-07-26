@@ -13,12 +13,9 @@
     <p class="fixed-top-center">{{ header }}</p>
 
     <div class="container">
-
-        {{ preamble_html }}
-
-        <br>
-        <p><b>Bibliography</b></p>
-        <br>
+        <div class="content">
+            {{ preamble_html }}
+        </div>
 
         {% for i, r in df.iterrows() %}
             <p id="{{ r['Key'] }}"></p>
